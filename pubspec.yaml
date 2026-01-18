@@ -24,6 +24,7 @@ dependencies:
   auto_size_text: 3.0.0
   package_info_plus: 9.0.0
   dio: 5.9.0
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -38,3 +39,17 @@ flutter:
   uses-material-design: true
   assets:
     - assets/common/
+
+# Flutter Launcher Icons configuration
+flutter_launcher_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/common/app-icon.png"
+  image_path_ios_dark_transparent: "assets/common/app-icon-transparent.png"
+  image_path_android: "assets/android/app-icon-android.png"
+  adaptive_icon_background: "assets/android/app-icon-background.png"
+  adaptive_icon_foreground: "assets/android/app-icon-foreground.png"
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "assets/common/app-icon.png"
