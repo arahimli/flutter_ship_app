@@ -64,6 +64,7 @@ android/app/google-services.json
 android/app/src/*/google-services.json
 flutterfire-config.sh
 
+
 # Firebase (other)
 .firebase/
 
