@@ -13,6 +13,8 @@ import 'package:flutter_ship_app/src/data/app_database_crud.dart';
 import 'package:flutter_ship_app/src/domain/app.dart';
 import 'package:flutter_ship_app/src/utils/string_hardcoded.dart';
 
+import '../../env/flavor.dart';
+
 /// This is the home page for the app
 class AppsListScreen extends ConsumerWidget {
   const AppsListScreen({super.key});
@@ -135,13 +137,20 @@ class WelcomeAppIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scale = MediaQuery.of(context).textScaler.scale(1.0);
+
+    final webAppName = switch (getFlavor()) {
+      Flavor.prod => 'Flutter Ship'.hardcoded,
+      Flavor.stg => 'Flutter Ship Stg'.hardcoded,
+      Flavor.dev => 'Flutter Ship Dev'.hardcoded,
+    };
+
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Welcome to Flutter Ship'.hardcoded,
+            'Welcome to $webAppName'.hardcoded,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           gapH4,
